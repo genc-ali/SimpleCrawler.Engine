@@ -1,18 +1,14 @@
-using System;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SimpleCrawler.Core.Database;
 using SimpleCrawler.Core.MessageQueue.RabbitMq;
 using SimpleCrawler.Domain;
 using SimpleCrawler.MongoDb;
 using SimpleCrawler.MongoDb.Repository;
+using SimpleCrawler.WebAPI.Infrastructure;
+using SimpleCrawler.WebAPI.Infrastructure.Crawlers;
+using SimpleCrawler.WebAPI.Infrastructure.MessageQueue;
 
-namespace SimpleCrawler.SinglePageApp
+namespace SimpleCrawler.WebAPI
 {
     public class Startup
     {
@@ -26,6 +22,18 @@ namespace SimpleCrawler.SinglePageApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(_ => (IConfigurationRoot) Configuration);
+            services.AddSingleton<AppConfiguration>();
+            services.AddScoped<IDbContext, SimpleCrawlerDbContext>();
+            
+            services.AddScoped<IQueryKeywordRepository, QueryKeywordRepository>();
+            services.AddScoped<ApplicationService>();
+            services.AddScoped<IApplicationAdapter, ApplicationAdapter>();
+            
+            services.AddHostedService<KeywordSearchBackgroundService>();
+            services.AddSingleton<IRabbitMqClient, RabbitMqClient>();
+            services.AddSingleton<GoogleCrawler>();
+            
             services.AddControllersWithViews();
             
             services.AddSwaggerGen(options =>
@@ -48,9 +56,6 @@ namespace SimpleCrawler.SinglePageApp
                     }
                 });
             });
-
-            // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,7 +82,6 @@ namespace SimpleCrawler.SinglePageApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();
 
             app.UseRouting();
 
@@ -91,16 +95,6 @@ namespace SimpleCrawler.SinglePageApp
             app.UseSwagger(options =>
             {
                 options.SerializeAsV2 = true;
-            });
-            
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
             });
         }
     }

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
 
         <IsPackable>false</IsPackable>
 
@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.2" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
         <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
         <PackageReference Include="xunit" Version="2.4.1" />
@@ -39,6 +39,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SimpleCrawler.Spa\SimpleCrawler.Spa.csproj" />
+      <ProjectReference Include="..\SimpleCrawler.WebAPI\SimpleCrawler.WebAPI.csproj" />
     </ItemGroup>
 
 </Project>

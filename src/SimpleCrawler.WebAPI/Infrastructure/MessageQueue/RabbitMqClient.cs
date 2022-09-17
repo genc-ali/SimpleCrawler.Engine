@@ -1,10 +1,9 @@
-using System;
 using RabbitMQ.Client;
 using SimpleCrawler.Core.DateTime;
 using SimpleCrawler.Core.MessageQueue.RabbitMq;
 using SimpleCrawler.Domain;
 
-namespace SimpleCrawler.SinglePageApp.Infrastructure.MessageQueue
+namespace SimpleCrawler.WebAPI.Infrastructure.MessageQueue
 {
     public class RabbitMqClient:IRabbitMqClient
     {

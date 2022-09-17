@@ -1,20 +1,12 @@
-using System;
-using System.Net.Http.Json;
 using System.Reflection;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using SimpleCrawler.Core;
 using SimpleCrawler.Core.Crawler;
 using SimpleCrawler.Domain;
 using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryResultDetailAggregation;
 
-namespace SimpleCrawler.SinglePageApp.Infrastructure
+namespace SimpleCrawler.WebAPI.Infrastructure
 {
     public class KeywordSearchBackgroundService : RabbitListener
     {

@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SimpleCrawler.Core\SimpleCrawler.Core.csproj" />
+      <ProjectReference Include="..\..\..\AppLibraries\SimpleCrawler.Core\src\SimpleCrawler.Core\SimpleCrawler.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>

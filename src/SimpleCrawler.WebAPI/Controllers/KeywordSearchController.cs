@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using SimpleCrawler.Domain;
 using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
-using SimpleCrawler.SinglePageApp.Infrastructure.Crawlers;
+using SimpleCrawler.WebAPI.Infrastructure.Crawlers;
 
-namespace SimpleCrawler.SinglePageApp.Controllers
+namespace SimpleCrawler.WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

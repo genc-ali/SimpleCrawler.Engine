@@ -1,18 +1,13 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using SimpleCrawler.Core.Crawler;
 using SimpleCrawler.Core.Security;
 
-namespace SimpleCrawler.SinglePageApp.Infrastructure.Crawlers
+namespace SimpleCrawler.WebAPI.Infrastructure.Crawlers
 {
     public class GoogleCrawler : WebCrawler
     {

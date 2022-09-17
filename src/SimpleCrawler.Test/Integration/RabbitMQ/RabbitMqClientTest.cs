@@ -6,16 +6,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using RabbitMQ.Client;
-using SimpleCrawler.Core.DateTime;
 using SimpleCrawler.Core.MessageQueue.RabbitMq;
 using SimpleCrawler.Domain;
 using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
-using SimpleCrawler.SinglePageApp;
-using SimpleCrawler.SinglePageApp.Infrastructure;
-using SimpleCrawler.SinglePageApp.Infrastructure.Crawlers;
-using SimpleCrawler.SinglePageApp.Infrastructure.MessageQueue;
+using SimpleCrawler.WebAPI.Infrastructure.Crawlers;
+using SimpleCrawler.WebAPI.Infrastructure.MessageQueue;
 using Xunit;
 
 namespace SimpleCrawler.Test.Integration.RabbitMQ

@@ -10,9 +10,8 @@ using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.MongoDb;
 using SimpleCrawler.MongoDb.Repository;
-using SimpleCrawler.SinglePageApp.Infrastructure;
-using SimpleCrawler.SinglePageApp.Infrastructure.Crawlers;
-using SimpleCrawler.SinglePageApp.Infrastructure.MessageQueue;
+using SimpleCrawler.WebAPI.Infrastructure.Crawlers;
+using SimpleCrawler.WebAPI.Infrastructure.MessageQueue;
 using Xunit;
 
 namespace SimpleCrawler.Test.Module.Domain

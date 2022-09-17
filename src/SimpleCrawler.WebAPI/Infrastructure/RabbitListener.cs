@@ -1,8 +1,4 @@
-using System;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -11,7 +7,7 @@ using SimpleCrawler.Domain;
 using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 
-namespace SimpleCrawler.SinglePageApp.Infrastructure
+namespace SimpleCrawler.WebAPI.Infrastructure
 {
     public class RabbitListener : IHostedService
     {

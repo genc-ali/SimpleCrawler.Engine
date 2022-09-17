@@ -1,0 +1,36 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:4906",
+      "sslPort": 44305
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "simple_crawler-spa": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_RabbitHost": "127.0.0.1",
+        "ASPNETCORE_RabbitUserName": "guest",
+        "ASPNETCORE_RabbitPassword": "guest",
+        "ASPNETCORE_RabbitPort": "5672",
+        "ASPNETCORE_RabbitMessageQueue": "Keyword.Search.New.Que",
+        "ASPNETCORE_RabbitMessageExchange": "Keyword.Search.New.Ex",
+        "ASPNETCORE_RabbitMessageRouteKey": "NEW",
+        "ASPNETCORE_MongoDbConnection": "mongodb://mongo1:27030,mongo2:27031,mongo3:27032/?replicaSet=rs&readPreference=primary&serverSelectionTimeoutMS=5000&connectTimeoutMS=10000",
+        "ASPNETCORE_MongoDbName": "SimpleCrawlerDb"
+      }
+    }
+  }
+}

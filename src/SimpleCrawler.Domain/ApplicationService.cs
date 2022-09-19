@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SimpleCrawler.Core.Crawler;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryResultDetailAggregation;
+using SimpleCrawler.NetCore.Crawler;
 
 namespace SimpleCrawler.Domain
 {

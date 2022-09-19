@@ -6,11 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using SimpleCrawler.Core.Database;
-using SimpleCrawler.Core.MessageQueue.RabbitMq;
-using SimpleCrawler.Domain;
-using SimpleCrawler.MongoDb;
-using SimpleCrawler.MongoDb.Repository;
 
 namespace SimpleCrawler.SinglePageApp
 {

@@ -1,13 +1,10 @@
-using System;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SimpleCrawler.Core.Database;
 using SimpleCrawler.Domain;
 using SimpleCrawler.MongoDb;
 using SimpleCrawler.MongoDb.Repository;
+using SimpleCrawler.NetCore.Database;
 using Xunit;
 
 namespace SimpleCrawler.Test.Module.MongoDb
@@ -41,7 +38,7 @@ namespace SimpleCrawler.Test.Module.MongoDb
         [Fact]
         public async Task DbConnectivityChek()
         {
-            var result = await _repository.DbConnectivityChek();
+            var result = await _repository.DbConnectivityCheck();
             Assert.True(result);
         }
 

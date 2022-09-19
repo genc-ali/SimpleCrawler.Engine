@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SimpleCrawler.Core.Database;
-using SimpleCrawler.Core.MessageQueue.RabbitMq;
 using SimpleCrawler.Domain;
 using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.MongoDb;
 using SimpleCrawler.MongoDb.Repository;
+using SimpleCrawler.NetCore.Database;
+using SimpleCrawler.NetCore.MessageQueue.RabbitMq;
 using SimpleCrawler.WebAPI.Infrastructure.Crawlers;
 using SimpleCrawler.WebAPI.Infrastructure.MessageQueue;
 using Xunit;
@@ -29,7 +29,7 @@ namespace SimpleCrawler.Test.Module.Domain
 
             var services = new ServiceCollection();
            
-            services.AddSingleton(_ => (IConfigurationRoot) configuration);
+            services.AddSingleton(_ => configuration);
             services.AddSingleton<AppConfiguration>();
             
             services.AddSingleton(_ => (IDbContext) new SimpleCrawlerDbContext(serviceConfigurationSettings));

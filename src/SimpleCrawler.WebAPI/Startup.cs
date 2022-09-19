@@ -1,9 +1,9 @@
 using Microsoft.OpenApi.Models;
-using SimpleCrawler.Core.Database;
-using SimpleCrawler.Core.MessageQueue.RabbitMq;
 using SimpleCrawler.Domain;
 using SimpleCrawler.MongoDb;
 using SimpleCrawler.MongoDb.Repository;
+using SimpleCrawler.NetCore.Database;
+using SimpleCrawler.NetCore.MessageQueue.RabbitMq;
 using SimpleCrawler.WebAPI.Infrastructure;
 using SimpleCrawler.WebAPI.Infrastructure.Crawlers;
 using SimpleCrawler.WebAPI.Infrastructure.MessageQueue;

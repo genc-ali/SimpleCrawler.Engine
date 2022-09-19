@@ -4,8 +4,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using SimpleCrawler.Core.Crawler;
 using SimpleCrawler.Core.Security;
+using SimpleCrawler.NetCore.Crawler;
 
 namespace SimpleCrawler.WebAPI.Infrastructure.Crawlers
 {

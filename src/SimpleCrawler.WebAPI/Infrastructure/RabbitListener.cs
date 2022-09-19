@@ -42,7 +42,7 @@ namespace SimpleCrawler.WebAPI.Infrastructure
         }
 
         // Method of handling messages
-        protected virtual Task<QueryKeywordDto> Process(string message)
+        protected virtual Task<QueryKeywordDto?> Process(string message)
         {
             throw new NotImplementedException();
         }

@@ -1,10 +1,10 @@
 using System.Reflection;
 using Newtonsoft.Json;
-using SimpleCrawler.Core.Crawler;
 using SimpleCrawler.Domain;
 using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryResultDetailAggregation;
+using SimpleCrawler.NetCore.Crawler;
 
 namespace SimpleCrawler.WebAPI.Infrastructure
 {
@@ -27,19 +27,19 @@ namespace SimpleCrawler.WebAPI.Infrastructure
 
         }
 
-        protected override async Task<QueryKeywordDto> Process(string message)
+        protected override async Task<QueryKeywordDto?> Process(string message)
         {
             var queryKeywordDto = JsonConvert.DeserializeObject<QueryKeywordDto>(message);
             
             try
             {
-                Assembly entryAssembly = Assembly.GetEntryAssembly();
-                Type searchEngineType = entryAssembly?.GetType(queryKeywordDto?.TypeOfSearchEngine ?? throw new InvalidOperationException());
+                Assembly? entryAssembly = Assembly.GetEntryAssembly();
+                Type? searchEngineType = entryAssembly?.GetType(queryKeywordDto?.TypeOfSearchEngine ?? throw new InvalidOperationException());
                 
                 var webCrawler = (WebCrawler) _scope.ServiceProvider.GetRequiredService(searchEngineType ?? throw new InvalidOperationException());
                 var urlList = await _applicationAdapter.QueryProcessStart(webCrawler, queryKeywordDto);
 
-                QueryResultDetail queryResultDetail = new QueryResultDetail(null, queryKeywordDto.UserId,
+                QueryResultDetail queryResultDetail = new QueryResultDetail(null, queryKeywordDto!.UserId,
                     queryKeywordDto.Keyword, queryKeywordDto.TypeOfSearchEngine, queryKeywordDto.QueryPeriod, urlList,
                     RowStatus.Completed, null);
                 

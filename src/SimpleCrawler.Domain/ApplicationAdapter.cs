@@ -1,18 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Polly;
 using Polly.CircuitBreaker;
 using Polly.Wrap;
-using SimpleCrawler.Core;
-using SimpleCrawler.Core.Crawler;
-using SimpleCrawler.Core.MessageQueue.RabbitMq;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryResultDetailAggregation;
+using SimpleCrawler.NetCore.Crawler;
+using SimpleCrawler.NetCore.MessageQueue.RabbitMq;
 
 namespace SimpleCrawler.Domain
 {

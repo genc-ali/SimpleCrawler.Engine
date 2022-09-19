@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using SimpleCrawler.Core.Database;
 using SimpleCrawler.Core.Security;
 using SimpleCrawler.Domain;
-using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryResultDetailAggregation;
+using SimpleCrawler.NetCore.Database;
 
 namespace SimpleCrawler.MongoDb.Repository
 {
@@ -74,7 +72,7 @@ namespace SimpleCrawler.MongoDb.Repository
             return queryKeyword;
         }
 
-        public async Task<bool>  DbConnectivityChek()
+        public async Task<bool>  DbConnectivityCheck()
         {
             return await _simpleCrawlerDbContext.CanConnectAsync();
         }

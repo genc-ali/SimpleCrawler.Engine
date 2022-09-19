@@ -3,12 +3,11 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;
-using SimpleCrawler.Core.Database;
 using SimpleCrawler.Domain;
-using SimpleCrawler.Domain.QueryKeywordContext;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryKeywordAggregation;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryResultDetailAggregation;
 using SimpleCrawler.Domain.QueryKeywordContext.QueryResultSummaryAggregation;
+using SimpleCrawler.NetCore.Database;
 
 namespace SimpleCrawler.MongoDb
 {
